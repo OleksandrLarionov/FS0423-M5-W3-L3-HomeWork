@@ -30,6 +30,11 @@ public class DesignPatternsApplication {
 		sezione1.addComponent(new Pagina(3));
 		sezione1.addComponent(new Pagina(4));
 
+		Sezione sezione2 = new Sezione("Il Creatore");
+		sezione1.addComponent(new Pagina(5));
+		sezione1.addComponent(new Pagina(6));
+		sezione1.addComponent(new Pagina(7));
+
 		libro.addComponent(sezione1);
 
 		libro.stampa();
