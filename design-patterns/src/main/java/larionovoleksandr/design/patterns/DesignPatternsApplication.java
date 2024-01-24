@@ -29,6 +29,12 @@ public class DesignPatternsApplication {
 		Sezione sezione1 = new Sezione("Gamba Scomparsa");
 		sezione1.addComponent(new Pagina(3));
 		sezione1.addComponent(new Pagina(4));
+
+		libro.addComponent(sezione1);
+
+		libro.stampa();
+
+		System.out.println("numero pagine " + libro.getNumeroDiPagine());
 	}
 
 }
