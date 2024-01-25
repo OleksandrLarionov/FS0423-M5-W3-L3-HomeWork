@@ -24,11 +24,11 @@ public class Sezione implements Component {
 
     @Override
     public int getNumeroDiPagine() {
-        int total = 0;
-        for (Component component : components) {
-            total += component.getNumeroDiPagine();
-        }
-        return total;
+//        int total = 0;
+//        for (Component component : components) {
+//            total += component.getNumeroDiPagine();
+//        }
+        return components.stream().mapToInt(Component::getNumeroDiPagine).sum();
     }
 
 }

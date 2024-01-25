@@ -8,22 +8,25 @@ import java.time.LocalDate;
 import java.time.Period;
 @Getter
 @ToString
-public class AdapterInfoToUser extends UserData{
+//da implementare
+public class AdapterInfoToUser implements DataSource{
     private Info info;
     public AdapterInfoToUser(Info info){
-        super();
         this.info = info;
-        adaptInfoToUser();
+        getNomeCompleto();
+        getEta();
     }
 
-    private void adaptInfoToUser(){
-        setNomeCompleto(info.getNome() + " " + info.getCognome());
-        setEta(calcolaEta(info.getDataDiNascita()));
-        System.out.println("Nome completo: " + this.getNomeCompleto() + " , " + "età: " + this.getEta());
+
+    @Override
+    public String getNomeCompleto() {
+       return info.getNome() + " " + info.getCognome();
     }
-    private int calcolaEta(LocalDate dataDiNascita){
+
+    @Override
+    public int getEta() {
         LocalDate oggi = LocalDate.now();
-        Period periodo = Period.between(dataDiNascita, oggi);
+        Period periodo = Period.between(info.getDataDiNascita(), oggi);
         return periodo.getYears();
     }
 }

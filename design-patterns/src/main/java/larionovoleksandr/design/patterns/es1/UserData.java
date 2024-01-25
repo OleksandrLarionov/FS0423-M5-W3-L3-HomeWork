@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class UserData implements DataSource {
+public class UserData {
     private String nomeCompleto;
     public int eta;
     public void getData(DataSource ds){

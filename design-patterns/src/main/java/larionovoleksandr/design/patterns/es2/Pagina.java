@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.ToString;
 
 @Getter
-@ToString
 public class Pagina implements Component {
     private int indicePagina;
     public Pagina(int indicePagina){

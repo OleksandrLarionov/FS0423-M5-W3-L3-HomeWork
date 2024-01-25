@@ -19,10 +19,12 @@ public class DesignPatternsApplication {
 		Info info = new Info("Alex","Larionov", LocalDate.of(1991,5,23));
 
 		AdapterInfoToUser newAdapt = new AdapterInfoToUser(info);
+		System.out.println(newAdapt.getNomeCompleto() + " " + newAdapt.getEta());
 
 
 		System.out.println("*****************************************************************");
-		Libro libro = new Libro("Gamba di legno e dove trovarla", List.of("Brazorf", "Lord Ring"),40.99);
+
+		Libro libro = new Libro("Gamba di legno e dove trovarla", List.of("Brazorf", "Lord Ring"),80.99);
 		libro.addComponent(new Pagina(1));
 		libro.addComponent(new Pagina(2));
 
@@ -36,8 +38,9 @@ public class DesignPatternsApplication {
 		sezione1.addComponent(new Pagina(7));
 
 		libro.addComponent(sezione1);
+		libro.addComponent(sezione2);
 
-		libro.stampa();
+//		libro.stampa();
 
 		System.out.println("numero pagine " + libro.getNumeroDiPagine());
 	}
